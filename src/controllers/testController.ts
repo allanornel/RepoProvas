@@ -7,3 +7,5 @@ export async function createTest(req: Request, res: Response) {
   await createTestService(testData);
   res.sendStatus(201);
 }
+
+export async function getTest(req: Request, res: Response) {}
