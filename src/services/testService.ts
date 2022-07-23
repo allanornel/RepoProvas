@@ -24,4 +24,12 @@ export async function createTestService(testData: CreateTestData) {
   await testRepository.insert(testData);
 }
 
-export async function getTestsByDiscipline() {}
+export async function getTestsByTerms() {
+  const testsByDiscipline = await testRepository.getTestsGroupByTerms();
+  return testsByDiscipline;
+}
+
+export async function getTestsByTeacher() {
+  const testsByTeacher = await testRepository.getTestsGroupByTeacher();
+  return testsByTeacher;
+}
