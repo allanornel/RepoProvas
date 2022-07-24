@@ -3,6 +3,10 @@ import { User } from "@prisma/client";
 
 export type CreateUserData = Omit<User, "id">;
 
+export type newUserData = CreateUserData & {
+  confirmPassword: string;
+};
+
 export async function findByEmail(email: string) {
   const result = await prisma.user.findUnique({ where: { email } });
   return result;
